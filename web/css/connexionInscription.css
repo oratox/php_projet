@@ -1,0 +1,11 @@
+#btn_connexion, #btn_inscription
+{
+  font-weight: 600;
+  text-decoration: underline;
+  cursor: pointer;
+  color: orange;
+}
+#btn_connexion:hover, #btn_inscription:hover
+{
+  text-decoration: none;
+}

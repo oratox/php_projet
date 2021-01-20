@@ -1,0 +1,87 @@
+#wrap .liste
+{
+  width: 80%;
+  padding: 3%;
+  margin: 0 auto 0 auto;
+  background-color: #282828;
+  border-radius: 6px 6px 0 0;
+  color: silver;
+}
+
+#wrap .liste .titre_liste
+{
+  text-align: center;
+  margin: 40px auto;
+  font-weight: bold;
+  font-size: 1.5em;
+  text-decoration: underline;
+}
+
+#wrap .liste .description_liste
+{
+  display: block;
+  width: 80%;
+  margin: auto;
+  word-wrap: break-word;
+}
+
+#wrap .items
+{
+  width: 80%;
+  padding: 0 3%;
+  margin: auto;
+}
+
+#wrap .items .item
+{
+  margin: 30px auto;
+  background-color: #303030;
+  padding: 1%;
+  border-radius: 12px;
+  font-size: 1.1em;
+  color: silver;
+}
+#wrap .items .item_flex
+{
+  display: flex;
+}
+#wrap .items .item .img_item
+{
+  width: 15%;
+  min-height: 70px;
+}
+#wrap .items .item .img_item img
+{
+  width: 100%;
+  object-fit: contain;
+  border-radius: 4px;
+}
+#wrap .items .item .nom_item
+{
+  width: 40%;
+  margin: auto;
+}
+#wrap .items .item .etat_item
+{
+  width: 25%;
+  margin: auto;
+}
+#wrap .items .item .voirPlus
+{
+  width: 15%;
+  margin: auto;
+}
+#wrap .items .item .voirPlus .btn_voir_plus
+{
+  text-decoration: underline;
+  cursor: pointer;
+  color: orange;
+}
+#wrap .items .item .voirPlus .btn_voir_plus:hover
+{
+  text-decoration: none;
+}
+#wrap .items .item .desc_item p
+{
+  text-align: center;
+}

@@ -1,0 +1,13 @@
+#wrap_footer
+{
+  min-height: 500px;
+}
+footer
+{
+  background-color: #161616;
+  color: silver;
+  padding: 50px 0;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 600;
+}

@@ -1,0 +1,297 @@
+*
+{
+  margin: 0;
+  padding: 0;
+}
+body, html
+{
+  height: 100%;
+  width: 100%;
+}
+body
+{
+  font-family: verdana, candara, sans-serif;
+  background-image: url('../img/fond_body.png');
+}
+a
+{
+  text-decoration: none;
+}
+label
+{
+  cursor: pointer;
+}
+
+/* message flash */
+.success, .danger
+{
+  width: 60%;
+  padding: 7px 0;
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 20px auto 30px auto;
+  text-align: center;
+  border-radius: 5px;
+  transition: opacity 0.6s;
+}
+.success:hover, .danger:hover
+{
+  opacity: 0.7;
+}
+.success
+{
+  background-color: #3E7330;
+  border: 3px solid #162712;
+  color: #162712;
+}
+.danger
+{
+  background-color: #733A30;
+  border: 3px solid #2E1814;
+  color: #2E1814;
+}
+
+/* tête de page (nom du site) */
+header
+{
+  padding: 40px 0;
+  background-color: #161616;
+  text-align: center;
+}
+header a
+{
+  color: orange;
+  font-size: 1.4em;
+  letter-spacing: .3rem;
+  font-weight: bold;
+  transition: letter-spacing 1s;
+  text-decoration: none;
+}
+header a:hover
+{
+  letter-spacing: .6rem;
+}
+
+/* menu du site */
+nav
+{
+  background-color: #232323;
+  padding: 12px 0;
+  display: flex;
+  border-bottom: 4px solid #161616;
+}
+nav a
+{
+  color: silver;
+  font-size: 1.2em;
+  padding: 6px 20px;
+  margin: 20px;
+  background-color: #161616;
+  border: 1.5px solid black;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: opacity 0.6s;
+}
+nav a:hover
+{
+  opacity: 0.6;
+}
+
+/* contenu des pages communes */
+#wrap
+{
+  width: 70%;
+  min-height: 100%;
+  background-color: #353535;
+  margin: auto;
+  padding: 50px;
+  border-right: 3px solid #161616;
+  border-left: 3px solid #161616;
+}
+#connexion h3, #inscription h3, #creerListe h3, #mesListes h3, #modifierListe h3, #ajouterItem h3, #modifierMail h3, #modifierMdp h3, #suppCompte h3, #displayInfos h3, #displayListes h3, #reserverForm h3
+{
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+#connexion, #inscription, #creerListe, #mesListes, #modifierListe, #ajouterItem, #modifierMail, #modifierMdp, #suppCompte, #displayInfos, #reserverForm
+{
+  width: 80%;
+  margin: 0 auto 50px auto;
+  background-color: #282828;
+  border-radius: 6px;
+  padding: 50px;
+  color: lightgrey;
+}
+
+#connexion form, #inscription form, #creerListe form, #mesListes form, #modifierListe form, #ajouterItem form, #modifierMail form, #modifierMdp form, #suppCompte form, #reserverForm form
+{
+  width: 90%;
+  margin: auto;
+  margin: 50px auto;
+  text-align: left;
+}
+#wrap input[type="text"], #wrap input[type="email"], #wrap input[type="password"], #wrap input[type="date"], #wrap input[type="number"]
+{
+  -webkit-appearance: textfield;
+  -webkit-box-sizing: content-box;
+  outline: none;
+  padding: 5px 5px 0px 5px;
+  font-size: 1em;
+  width: 30%;
+  height: 26px;
+  border: none;
+  -webkit-appearance: none;
+  -webkit-border-radius: 2px;
+  border-bottom: 2px solid orange;
+  background: transparent;
+  color: silver;
+  letter-spacing: .1rem;
+}
+#wrap input[name="descriptionListe"]
+{
+  width: 70%;
+}
+#wrap input[type="text"]:-webkit-autofill, #wrap input[type="email"]:-webkit-autofill, #wrap input[type="password"]:-webkit-autofill, #wrap input[type="number"]:-webkit-autofill
+{
+  -webkit-text-fill-color: silver;
+  -webkit-box-shadow: 0 0 0 50px #282828 inset; /* Change the color to your own background color */
+}
+#wrap input[type="text"]::placeholder, #wrap input[type="email"]::placeholder, #wrap input[type="password"]::placeholder, #wrap input[type="date"]::placeholder, #wrap input[type="number"]::placeholder
+{
+  color: grey;
+}
+#wrap input[type="submit"]
+{
+  -webkit-appearance: none;
+  -webkit-border-radius: 0px;
+  padding: 6px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 1s;
+  outline: none;
+  font-size: 1em;
+  color: white;
+  background-color: #2e6da4;
+  border-top: 3px solid silver;
+  border-left: 3px solid silver;
+  border-right: 3px solid #282828;
+  border-bottom: 3px solid #282828;
+}
+#wrap input[type="submit"]:hover
+{
+  border-top: 3px solid #282828;
+  border-left: 3px solid #282828;
+  border-right: 3px solid silver;
+  border-bottom: 3px solid silver;
+}
+#wrap h2
+{
+  font-size: 1.7em;
+  border-bottom: 2px solid #131313;
+  margin-bottom: 50px;
+  display: inline-block;
+  color: lightblue;
+}
+#wrap a
+{
+  color: silver;
+  transition: color 1s;
+}
+#wrap a:hover
+{
+  text-decoration: underline;
+}
+
+#wrap .imgItem
+{
+  width: 100px;
+  object-fit: contain;
+}
+#wrap .imgItem img
+{
+  width: 100%;
+}
+
+#displayListes
+{
+  width: 90%;
+  margin: auto;
+}
+.displayListe, #lienCreerListe
+{
+  margin: auto;
+  margin: 0 10% 5% 10%;
+  padding: 30px;
+  background-color: #262626;
+  border-radius: 6px;
+  color: silver;
+}
+.displayListe
+{
+  margin: 2% 6%;
+}
+#lienCreerListe a
+{
+  text-decoration: underline;
+  color: white;
+}
+#lienCreerListe a:hover
+{
+  text-decoration: none;
+}
+
+.displayListe h4
+{
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+.displayListe p:last-child
+{
+  margin-top: 20px;
+  text-indent: 25px;
+}
+
+.afficherListes
+{
+  padding: 2%;
+  margin: 2% auto;
+  background-color: #292929;
+  opacity: 0.9;
+  border-radius: 6px;
+  font-weight: 400;
+}
+.afficherListes h3
+{
+  font-size: 1.4em;
+  color: lightgrey;
+}
+.afficherListes span
+{
+  color: grey;
+}
+
+.afficherListe
+{
+  background-color: #262626;
+  padding: 2% 4%;
+  margin: 2%;
+  border-radius: 6px;
+  word-break: break-all;
+  color: silver;
+}
+.afficherListe a
+{
+  color: grey;
+  text-decoration: underline;
+}
+.afficherListe a:hover
+{
+  color: grey;
+  text-decoration: none;
+}
+.afficherListes .no_liste
+{
+  margin: 2% 5% 0 2%;
+}
