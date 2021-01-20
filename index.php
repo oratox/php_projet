@@ -11,7 +11,7 @@ $config = require_once __DIR__ . '/src/conf/settings.php';
 $c = new \Slim\Container(['settings' => ['displayErrorDetails' => true]]);
 $app = new \Slim\App($c);
 
-\wish\bd\connexion::start(__DIR__ . '/src/conf/db.config.ini');
+\wish\bd\Connexion::start(__DIR__ . '/src/conf/db.config.ini');
 
 
 $app->post('/mesListes', function(Request $rq, Response $rs, array $args): Response
