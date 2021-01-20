@@ -358,7 +358,7 @@ class ParticipantView
                 else
                 {
                     $html = $html . <<<END
-                        <p><img src="{$this->data["basePath"]}/img/items/{$item->img}" alt="image representatif de l'item"></p>
+                        <p><img src="{$this->data["basePath"]}/web/img/items/{$item->img}" alt="image representatif de l'item"></p>
                     END;
                 }
             }
@@ -491,7 +491,7 @@ class ParticipantView
                 else
                 {
                     $html = $html . <<<END
-                       <p title="L'image de l'item"><img src="{$this->data["basePath"]}/img/items/$item->img" alt="Image item"/></p>
+                       <p title="L'image de l'item"><img src="{$this->data["basePath"]}/web/img/items/$item->img" alt="Image item"/></p>
                     END;
                 }
             }
@@ -687,12 +687,12 @@ class ParticipantView
                 $content = $this->displayCompte();
                 break;
             case "lireListe":
-                $script = "<script src='{$this->data["basePath"]}/scripts/toggleItems.js'></script>";
+                $script = "<script src='{$this->data["basePath"]}/web/scripts/toggleItems.js'></script>";
                 $content = $this->displayLireListe();
                 break;
             case "connexionInscription":
                 $inscription_form = $val['inscription_form'];
-                $script = "<script> var inscription_form = $inscription_form; </script> <script src='{$this->data["basePath"]}/scripts/toggleLogin.js'></script>";
+                $script = "<script> var inscription_form = $inscription_form; </script> <script src='{$this->data["basePath"]}/web/scripts/toggleLogin.js'></script>";
                 $content = $this->displayConnexionInscription();
                 break;
             case "index":
@@ -716,9 +716,14 @@ class ParticipantView
                 <title> MyWishList.app </title>
                 <meta name="description" content="Une application de liste de souhaits"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <link rel="stylesheet" href="{$this->data["basePath"]}/css/commun.css"/>
-                <link rel="stylesheet" href="{$this->data["basePath"]}/css/footer.css"/>
-                <link rel="stylesheet" href="{$this->data["basePath"]}/css/{$val["sujet"]}.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/commun.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/footer.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/connexionInscription.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/creerListe.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/footer.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/index.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/lireListe.css"/>
+                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/ConnexionInscription.css"/>
                 <title> Accueil </title>
             </head>
             <body>

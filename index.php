@@ -1,19 +1,19 @@
 <?php
 
-require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \wish\conf\Eloquent;
 use \wish\control\ParticipantController;
 
-$config = require_once __DIR__ . '/../src/conf/settings.php';
+$config = require_once __DIR__ . '/src/conf/settings.php';
 
 $app = new \Slim\app();
 $c = new \Slim\Container($config);
 $app = new \Slim\app($c);
 
-Eloquent::start(__DIR__ . '/../src/conf/db.config.ini');
+Eloquent::start(__DIR__ . '/src/conf/db.config.ini');
 
 
 $app->post('/mesListes', function(Request $rq, Response $rs, array $args): Response
