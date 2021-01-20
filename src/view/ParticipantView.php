@@ -95,8 +95,7 @@ class ParticipantView
             </div>
         END;
 
-        //ntm
-        if(isset($_SESSION['auth']))
+        if(isset($_SESSION["auth"]))
         {
             $html = $html . <<<END
                 <div id="mesListes">
