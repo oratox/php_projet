@@ -5,13 +5,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \wish\control\ParticipantController;
+use \wish\bd\Connexion;
 
 $config = require_once __DIR__ . '/src/conf/settings.php';
 
 $c = new \Slim\Container(['settings' => ['displayErrorDetails' => true]]);
 $app = new \Slim\App($c);
 
-\wish\bd\Connexion::start(__DIR__ . '/src/conf/db.config.ini');
+Connexion::start(__DIR__ . '/src/conf/db.config.ini');
 
 
 $app->post('/mesListes', function(Request $rq, Response $rs, array $args): Response
