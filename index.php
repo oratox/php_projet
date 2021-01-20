@@ -9,7 +9,6 @@ use \wish\control\ParticipantController;
 
 $config = require_once __DIR__ . '/src/conf/settings.php';
 
-$app = new \Slim\app();
 $c = new \Slim\Container($config);
 $app = new \Slim\app($c);
 
