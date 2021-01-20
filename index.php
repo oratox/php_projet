@@ -4,15 +4,14 @@ require_once __DIR__ . '/vendor/autoload.php';
 
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
-use \wish\conf\Eloquent;
 use \wish\control\ParticipantController;
 
 $config = require_once __DIR__ . '/src/conf/settings.php';
 
-$c = new Slim\Container(['settings' => ['displayErrorDetails' => true]]);
-$app = new Slim\App($c);
+$c = new \Slim\Container(['settings' => ['displayErrorDetails' => true]]);
+$app = new \Slim\App($c);
 
-Eloquent::start(__DIR__ . '/src/conf/db.config.ini');
+\wish\bd\connexion::start(__DIR__ . '/src/conf/db.config.ini');
 
 
 $app->post('/mesListes', function(Request $rq, Response $rs, array $args): Response
