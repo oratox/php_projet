@@ -5,7 +5,8 @@ require_once __DIR__ . '/vendor/autoload.php';
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 use \wish\control\ParticipantController;
-use \wish\bd\Connexion as Connexion;
+
+require '/src/bd/Connexion.php';
 
 $config = require_once __DIR__ . '/src/conf/settings.php';
 
