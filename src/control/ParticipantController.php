@@ -25,6 +25,7 @@ class ParticipantController
     function displayIndex(Request $rq, Response $rs, array $args): Response
     {
         $session = new Session();
+        $auth = new Auth($session);
 
         $dateExp = new \DateTime("now");
         $listes = Liste::query()->orderBy('expiration')->where("visibilite", "!=", "null")->whereDate("expiration", ">", $dateExp)->get();
@@ -441,6 +442,9 @@ class ParticipantController
 
     function displayCreerListe(Request $rq, Response $rs, array $args): Response
     {
+        $session = new Session();
+        $auth = new Auth($session);
+
         $data = array("titreListe" => "", "descriptionListe" => "", "dateListe" => "", "container" => $this->c, "basePath" => $rq->getUri()->getBasePath(), "path" => $rq->getUri()->getPath());
         $v = new ParticipantView($data);
         $rs->getBody()->write($v->render(array("sujet" => "creerListe")));
@@ -508,6 +512,7 @@ class ParticipantController
     function displayLireListe(Request $rq, Response $rs, array $args): Response
     {
         $session = new Session();
+        $auth = new Auth($session);
 
         if(!isset($args['id_liste']) && !empty($args['id_liste']))
         {

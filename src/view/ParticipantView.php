@@ -673,6 +673,9 @@ class ParticipantView
 
     public function render(array $val)
     {
+        $session = new Session();
+        $auth = new Auth($session);
+
         $script = "";
         switch($val["sujet"]):
             case "mesListes":
@@ -701,7 +704,6 @@ class ParticipantView
                 $content = $this->displayIndex();
         endswitch;
 
-        $session = new Session();
         $flash = "";
         if($session->read('flash'))
         {
