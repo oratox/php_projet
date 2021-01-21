@@ -29,7 +29,7 @@ class ParticipantView
                         <label for="selectAuteur"> Rechercher par auteur : </label>
                         <select name="selectAuteur" required>
                             <option value="">--Choisiez un auteur--</option>
-        END;
+END;
 
         foreach($this->data["auteurs"] as $auteur)
         {
@@ -49,7 +49,7 @@ class ParticipantView
                     <form method="POST" action="{$this->data["container"]->router->pathFor("rechercherIndex")}">
                         <p> Rechercher par intervalle de date : </p>
                         <label for="dateDebut"> Début : </label>
-        END;
+END;
 
         $html = $html . <<<END
                         <input type="date" name="dateDebut" id="dateDebut" value="{$this->data["dateDebut"]}" required>
@@ -59,8 +59,7 @@ class ParticipantView
                     </form>
                     <p> Annuler les recherche : <a href=""> ici </a></p>
                 </div>
-
-        END;
+END;
 
 
         foreach($this->data["listes"] as $liste)
@@ -76,12 +75,12 @@ class ParticipantView
                         $dateExpir
                     <p><a href="{$this->data["container"]->router->pathFor("lireListe", ['token' => 0, 'id_liste' => $liste->no])}"> Voir plus </a></p>
                  </div>
-                END;
+END;
         }
 
         $html = $html . <<<END
             </div>
-        END;
+END;
 
         return $html;
     }
@@ -93,7 +92,7 @@ class ParticipantView
             <div id="lienCreerListe">
                 <h3> Vous voulez crée une liste de souhait ? C'est <a href="{$this->data["container"]->router->pathFor("creerListe")}" title="Créer une liste"> ici </a></h3>
             </div>
-        END;
+END;
 
         if(isset($_SESSION['auth']))
         {
@@ -106,7 +105,7 @@ class ParticipantView
                         <input type="submit" name="ajouterListe" value="Créer ma liste">
                     </form>
                 </div>
-            END;
+END;
         }
 
         if(isset($_SESSION['auth']))
