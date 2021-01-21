@@ -80,7 +80,7 @@ $app->get('/deconnexion', function(Request $rq, Response $rs, array $args): Resp
     return $c->displayDeconnexion($rq, $rs, $args);
 })->setName("deconnexion");
 
-$app->get('connexionInscription', function(Request $rq, Response $rs, array $args): Response
+$app->get('/connexionInscription', function(Request $rq, Response $rs, array $args): Response
 {
     $c = new ParticipantController($this);
     return $c->displayConnexionInscription($rq, $rs, $args);
