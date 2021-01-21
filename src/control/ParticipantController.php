@@ -514,7 +514,7 @@ class ParticipantController
         $session = new Session();
         $auth = new Auth($session);
 
-        if(!isset($args['id_liste']) && !empty($args['id_liste']))
+        if($args['token'] != 0)
         {
             $args_lis = true;
             try
