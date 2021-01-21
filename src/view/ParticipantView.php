@@ -672,7 +672,6 @@ END;
     public function render(array $val)
     {
         $session = new Session();
-        $auth = new Auth($session);
 
         $script = "";
         switch($val["sujet"]):
