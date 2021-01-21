@@ -1,0 +1,41 @@
+Nous sommes un groupe de 3. La contribution de chacun des personnes dans ce groupe c'est fait sur plusieurs contextes : 
+Oralement sur discord, par écrit en CTRL C CTRL V et beaucoup en présentiel aussi.
+
+Cyril : 
+
+render avec Grosio Aurélien
+fonction displayCompte dans le ParticipantView
+fonction displayIndex() dans le ParticipantView avec Aurélien
+Grande participation dans la création des formulaires en html 
+fonction displayIndex() dans le ParticipantController avec Phung
+fonction displayMesListes() dans le ParticipantController
+fonction modifierListeFormulaire dans le ParticipantController
+fonction displayConnexionInscription() dans le ParticipantController
+Début de la fonction connexionInscriptionFormulaire() dans le ParticipantController
+
+GROSIO Aurélien:
+
+fonction displayConnexionInscription dans le ParticipantView
+fonction displayModifierListe() dans le ParticipantView avec Aurélien
+fonction displayMesListes() dans le ParticipantView avec Aurélien
+Classe Session et Auth dans le dossier Control
+Structure du code des classes User, Rservation
+Création de la classe Connexion
+Fichiers css et grande partie du code html surtout le header, footer et quelques formulaire
+fonction displayDeconnexion dans ParticipantController avec Cyril
+fonction displayCompte dans ParticipantController
+fonction displayLireListe() dans le ParticipantController
+Creation et revu de la base de donnée
+Corréction de la fonction connexionInscriptionFormulaire() dans le ParticipantController de Ciryl
+
+Installation du dossier sur git et sur webetu et fixe des problème
+
+
+Phung : 
+
+fonction displayLireListe() dans le ParticipantView avec Aurélien
+fonction displayModifierListe() avec Aurélien
+fonction creerListe() dans le ParticipantView avec Aurélien
+Structure du code des classes Item, Liste
+fonction displayCreerListe() dans le ParticipantController
+fonction creerListeFormulaire() dans le ParticipantController
