@@ -723,7 +723,6 @@ END;
                 <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/footer.css"/>
                 <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/index.css"/>
                 <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/lireListe.css"/>
-                <link rel="stylesheet" href="{$this->data["basePath"]}/web/css/ConnexionInscription.css"/>
                 <title> Accueil </title>
             </head>
             <body>
