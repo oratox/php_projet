@@ -8,7 +8,7 @@ use \wish\control\ParticipantController;
 
 $config = require_once __DIR__ . '/src/conf/settings.php';
 
-$c = new \Slim\Container(['settings' => ['displayErrorDetails' => true]]);
+$c = new \Slim\Container($config);
 $app = new \Slim\App($c);
 
 \wish\bd\Connexion::start(__DIR__ . '/src/conf/db.config.ini');

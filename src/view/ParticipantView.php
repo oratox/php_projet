@@ -366,7 +366,7 @@ END;
             if(isset($this->data["array_res"][$item->id]))
                 $item_reste = $item->tarif - $this->data["array_res"][$item->id];
 
-            if($item_reste == $item->tarif)
+            if($item_reste == 0)
             {
                 $html = $html . <<<END
                     <p title="L'état de l'item"> L'item a été reservé par un internaute </p>
