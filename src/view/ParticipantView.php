@@ -348,7 +348,7 @@ END;
 
             if($item->img != null)
             {
-                if(strpos($item->img, "http") >= 0)
+                if(strpos($item->img, "ttp://") >= 0)
                 {
                     $html = $html . <<<END
                         <p><img src="{$item->img}" alt="image representatif de l'item"></p>
@@ -481,7 +481,7 @@ END;
 END;
             if($item->img != null)
             {
-                if (strpos($item->img, "http") >= 0)
+                if (strpos($item->img, "ttp://") > 0)
                 {
                     $html = $html . <<<END
                        <p title="L'image de l'item"><img src="{$item->img}" alt="Image item"/></p>
