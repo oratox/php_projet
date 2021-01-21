@@ -348,7 +348,8 @@ END;
 
             if($item->img != null)
             {
-                if(strpos($item->img, "ttp://") >= 0)
+                $url = filter_var($item->img, FILTER_VALIDATE_URL);
+                if($url != '')
                 {
                     $html = $html . <<<END
                         <p><img src="{$item->img}" alt="image representatif de l'item"></p>
@@ -481,7 +482,8 @@ END;
 END;
             if($item->img != null)
             {
-                if (strpos($item->img, "ttp://") > 0)
+                $url = filter_var($item->img, FILTER_VALIDATE_URL);
+                if($url != '')
                 {
                     $html = $html . <<<END
                        <p title="L'image de l'item"><img src="{$item->img}" alt="Image item"/></p>
