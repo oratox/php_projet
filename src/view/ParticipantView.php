@@ -39,7 +39,7 @@ END;
 
             $html = $html . <<<END
                 <option value="{$auteur->user_id}" $selected>{$auteur->user_pseudo}</option>
-            END;
+END;
         }
 
         $html = $html . <<<END
