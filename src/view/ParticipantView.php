@@ -113,7 +113,7 @@ END;
             $html = $html . <<<END
                 <div class="afficherListes">
                     <h3> Mes Listes authentifiées : </h3>
-            END;
+END;
 
             if(!empty($this->data["listes_user"]))
             {
@@ -124,37 +124,37 @@ END;
                             <p> Liste n°{$liste_user['no']} : <span><b>{$liste_user['titre']}</b></span></p>
                             <p> Lien pour modifier : <span><a href="{$this->data["container"]->router->pathFor("modifierListe", ['tokenModif' => $liste_user['tokenModif']])}" title="Modifier la liste en mode créateur"> ici </a></span></p>
                             <p> Token de modification : <span>{$liste_user['tokenModif']}</span></p>
-                    END;
+END;
 
                     if($liste_user['token'] != null)
                     {
                         $html = $html . <<<END
                             <p> Lien pour visualiser  : <span><a href="{$this->data["container"]->router->pathFor("lireListe", ['token' => $liste_user['token']])}" title="Visualiser en mode partage la liste"> ici </a></span></p>
                             <p> Token de partage : <span>{$liste_user['token']}</span></p>
-                        END;
+END;
                     }
 
                     $html = $html . <<<END
                         </div>
-                    END;
+END;
                 }
             }
             else
             {
                 $html = $html . <<<END
                     <p class="no_liste"> Aucune liste créée ou ajouté sur votre compte </p>
-                END;
+END;
             }
 
             $html = $html . <<<END
                 </div>
-            END;
+END;
         }
 
         $html = $html . <<<END
             <div class="afficherListes">
                 <h3> Mes Listes non authentifiées : </h3>
-        END;
+END;
 
         if(!empty($this->data["listes_cookie"]))
         {
@@ -165,19 +165,19 @@ END;
                         <p> Liste n°{$liste_cookie['no']} : <span><b>{$liste_cookie['titre']}</b></span></p>
                         <p> Lien pour modifier : <span><a href="{$this->data["container"]->router->pathFor("modifierListe", ['tokenModif' => $liste_cookie['tokenModif']])}" title="Modifier la liste en mode créateur"> ici </a></span></p>
                         <p> Token de modification : <span>{$liste_cookie['tokenModif']}</span></p>
-                END;
+END;
 
                 if($liste_cookie['token'] != null)
                 {
                     $html = $html . <<<END
                         <p> Lien pour visualiser : <span><a href="{$this->data["container"]->router->pathFor("lireListe", ['token' => $liste_cookie['token']])}" title="Visualiser en mode partage la liste"> ici </a></span></p>
                         <p> Token de partage : <span>{$liste_cookie['token']}</span></p>
-                    END;
+END;
                 }
 
                 $html = $html . <<<END
                     </div>
-                END;
+END;
             }
         }
         else
@@ -186,19 +186,19 @@ END;
             {
                 $html = $html . <<<END
                     <p class="no_liste"> Il y a aucune liste non enregistrée sur votre compte </p>
-                END;
+END;
             }
             else
             {
                 $html = $html . <<<END
                     <p class="no_liste"> Il y a aucune liste de crée </p>
-                END;
+END;
             }
         }
 
         $html = $html . <<<END
             </div>
-        END;
+END;
 
         return $html;
     }
@@ -237,7 +237,7 @@ END;
                     <input type="submit" name="suppCompte" value="Supprimer mon compte">
                 </form>
             </div>
-        END;
+END;
 
         return $html;
     }
@@ -246,13 +246,13 @@ END;
     {
         $html = <<<END
               <h2> Modifier la liste n° {$this->data["liste"]->no} :</h2>
-              END;
+END;
 
         if($this->data["liste"]->token != null)
         {
             $html = $html . <<<END
                 <h4> Lien de partage : <a href="{$this->data["container"]->router->pathFor("lireListe", ['token' => $this->data["liste"]->token])}">{$this->data["container"]->router->pathFor("lireListe", ['token' => $this->data["liste"]->token])}</a> </h4><br/><br/>
-            END;
+END;
         }
 
         $html = $html . <<<END
@@ -265,48 +265,48 @@ END;
                   <input type="text" name="descriptionListe" placeholder="La description" id="descriptionListe" value="{$this->data["liste"]->description}" required> <br/><br/>
                   <label for="dateListe"> La date d'expiration : </label>
                   <input type="date" name="dateListe" placeholder="La date d'expiration" id="dateListe" value="{$this->data["liste"]->expiration}" required><br/><br/>
-            END;
+END;
 
         if(empty($this->data['items'][0]))
         {
             $html = $html . <<<END
                    <p style="color: orange;"> Vous pouvez partager votre liste une fois que celle-ci contient au moins 1 item. </p>
-            END;
+END;
         }
         else
         {
             $html = $html . <<<END
                    <label for="partageTokenListe"> Générer un token de partage </label>
-            END;
+END;
 
             if($this->data["liste"]->token != null)
             {
                 $html = $html . <<<END
                     <input type="checkbox" name="partageTokenListe" id="partageTokenListe" value="1" checked><br/><br/>
-                END;
+END;
             }
             else
             {
                 $html = $html . <<<END
                     <input type="checkbox" name="partageTokenListe" id="partageTokenListe" value="1"><br/><br/>
-                END;
+END;
             }
 
             $html = $html . <<<END
                     <label for="partagePubliqueListe"> Partager la liste en publique </label>
-            END;
+END;
 
             if($this->data["liste"]->visibilite != null)
             {
                 $html = $html . <<<END
                     <input type="checkbox" name="partagePubliqueListe" id="partagePubliqueListe" value="1" checked>
-                END;
+END;
             }
             else
             {
                 $html = $html . <<<END
                     <input type="checkbox" name="partagePubliqueListe" id="partagePubliqueListe" value="1">
-                END;
+END;
             }
         }
 
@@ -315,7 +315,7 @@ END;
                 <input type="submit" name="modifierListe" value="Modifier ma liste">
                 </form>
               </div>
-        END;
+END;
 
         $html = $html . <<<END
               <div id="ajouterItem">
@@ -336,7 +336,7 @@ END;
                   <input type="submit" name="ajouterItem" value="Ajouter cet item">
                   </form>
                 </div>
-            END;
+END;
 
         foreach($this->data["items"] as $item)
         {
@@ -344,7 +344,7 @@ END;
               <div id="ajouterItem">
                 <h3> Formulaire de modification <u>Item n°{$item->id}</u>: </h3>
                 <div class="imgItem">
-              END;
+END;
 
             if($item->img != null)
             {
@@ -352,13 +352,13 @@ END;
                 {
                     $html = $html . <<<END
                         <p><img src="{$item->img}" alt="image representatif de l'item"></p>
-                     END;
+END;
                 }
                 else
                 {
                     $html = $html . <<<END
                         <p><img src="{$this->data["basePath"]}/web/img/items/{$item->img}" alt="image representatif de l'item"></p>
-                    END;
+END;
                 }
             }
 
@@ -371,7 +371,7 @@ END;
                 $html = $html . <<<END
                     <p title="L'état de l'item"> L'item a été reservé par un internaute </p>
                     </div></div>
-                END;
+END;
             }
             else
             {
@@ -389,19 +389,19 @@ END;
                   <label for="urlItem{$item->id}"> Url explicatif (facultatif) : </label>
                   <input type="text" name="urlItem{$item->id}" placeholder="Url représentant l'item" id="urlItem{$item->id}" value="{$item->url}"> <br/><br/>
                   <label for="cagnotteItem{$item->id}"> Ouvrir une cagnotte : </label>
-            END;
+END;
 
                 if($item->cagnotte != null)
                 {
                     $html = $html . <<<END
                   <input type="checkbox" name="cagnotteItem{$item->id}" value="1" id="cagnotteItem{$item->id}" checked>
-                END;
+END;
                 }
                 else
                 {
                     $html = $html . <<<END
                   <input type="checkbox" name="cagnotteItem{$item->id}" value="1" id="cagnotteItem{$item->id}">
-                END;
+END;
                 }
 
                 $html = $html . <<<END
@@ -409,7 +409,7 @@ END;
                   <input type="submit" name="modifierItem{$item->id}" value="Modifier cet item">
                   </form>
                 </div>
-            END;
+END;
             }
         }
 
@@ -432,7 +432,7 @@ END;
                   <input type="submit" name="creer" value="Créer ma liste">
                 </form>
               </div>
-         END;
+END;
 
         return $html;
     }
@@ -452,25 +452,25 @@ END;
               <p class="date_liste" title="La date d'éxpiration de la liste"> Expire le $expiration </p>
               <p class="titre_liste" title="Le titre de la liste"> {$this->data["liste"]["titre"]} </p>
               <p class="description_liste" title="La description de la liste"> {$this->data["liste"]["description"]} </p><br/><br/>
-        END;
+END;
 
         if($this->data["reserve_liste"])
         {
             $html = $html . <<<END
               <p title="informations sur la reservation des items" style="color: darkgreen;"> Tous les items sont reservés ! </p>
-            END;
+END;
         }
         else
         {
             $html = $html . <<<END
               <p title="informations sur la reservation des items" style="color: orangered;"> Tous les items ne sont pas reservés ! </p>
-            END;
+END;
         }
 
         $html = $html . <<<END
             </div>
             <div class="items">
-        END;
+END;
 
         foreach($this->data["items"] as $item)
         {
@@ -478,20 +478,20 @@ END;
                 <div class="item">
                   <div class="item_flex">
                     <div class="img_item">
-                END;
+END;
             if($item->img != null)
             {
                 if (strpos($item->img, "http") >= 0)
                 {
                     $html = $html . <<<END
                        <p title="L'image de l'item"><img src="{$item->img}" alt="Image item"/></p>
-                    END;
+END;
                 }
                 else
                 {
                     $html = $html . <<<END
                        <p title="L'image de l'item"><img src="{$this->data["basePath"]}/web/img/items/$item->img" alt="Image item"/></p>
-                    END;
+END;
                 }
             }
 
@@ -501,7 +501,7 @@ END;
                       <p title="Le nom de l'item"> {$item->nom} </p>
                     </div>
                     <div class="etat_item">
-                END;
+END;
 
             $item_reste = $item->tarif;
             if(isset($this->data["array_res"][$item->id]))
@@ -513,20 +513,20 @@ END;
                 {
                     $html = $html . <<<END
                         <p title="L'état de l'item"> reservé </p>
-                    END;
+END;
                 }
                 else
                 {
                     $html = $html . <<<END
                         <p title="L'état de l'item"> non reservé </p>
-                    END;
+END;
                 }
             }
             else
             {
                 $html = $html . <<<END
                         <p title="L'état de l'item"> état : ?? </p>
-                END;
+END;
             }
 
             $prix = number_format($item->tarif, 2, ',', ' ');
@@ -539,13 +539,13 @@ END;
                   <div class="desc_item" style="display: none;"><br/>
                     <p title="Le prix de l'item"> Tarif : {$prix}€ </p><br/>
                     <p title="La déscription de l'item"> Description : {$item->descr} </p><br/><br/>
-            END;
+END;
 
             if(!$this->data["liste_auteur"] || $this->data["reserve_liste"])
             {
                 $html = $html . <<<END
                     <div id="reservation_infos">
-                END;
+END;
 
                 $reservation_liste = Reservation::query()->where('id_item', '=', $item->id)->get();
 
@@ -557,31 +557,31 @@ END;
                             <p> message : {$reservation_affi->message_res} </p>
                             <p> prix : {$reservation_affi->number_res} </p>
                         </div>
-                    END;
+END;
                 }
 
                 $html = $html . <<<END
                     </div>
-                END;
+END;
 
                 if($item_reste)
                 {
                     $html = $html . <<<END
                     <div id="reserverForm">
                         <h3> Réserver un item : </h3>
-                    END;
+END;
 
                     if(!empty($this->data["liste"]["token"]))
                     {
                         $html = $html . <<<END
                             <form method="POST" action="{$this->data["container"]->router->pathFor("reserverItem", ["token" => $this->data["liste"]["token"], "id_liste" => $this->data["liste"]["no"], "id_item" => $item->id])}">                   
-                        END;
+END;
                     }
                     else
                     {
                         $html = $html . <<<END
                             <form method="POST" action="{$this->data["container"]->router->pathFor("reserverItem", ["token" => 0, "id_liste" => $this->data["liste"]["no"], "id_item" => $item->id])}">                   
-                        END;
+END;
                     }
 
                     $html = $html . <<<END
@@ -589,7 +589,7 @@ END;
                             <input type="text" name="pseudo_res" id="pseudo_res" required><br/><br/> 
                             <label for="message_res"> Message (facultatif) : </label>
                             <input type="text" name="message_res" id="message_res">
-                END;
+END;
 
                     if($item->cagnotte)
                     {
@@ -599,7 +599,7 @@ END;
                             <label for="number_res"> Tarif (max : {$item_reste_max}€) : </label>
                             <input type="number" name="number_res" id="number_res" max="{$item_reste}" step="0.01" required><br/><br/>
                             <p style="color: orange; text-align: left;"> Cagnotte : Plusieurs personnes peuvent participer à la reservation. </p>
-                    END;
+END;
                     }
 
                     $html = $html . <<<END
@@ -607,26 +607,26 @@ END;
                             <input type="submit" name="reserverItem" value="reserver">
                         </form>
                     </div>
-                END;
+END;
                 }
             }
             else
             {
                 $html = $html . <<<END
                     <p title="Modifier l'item"> Vous pouvez modifier l'item <a href="{$this->data["container"]->router->pathFor("modifierListe", ['tokenModif' => $this->data["liste"]["tokenModif"]])}"> ici </a> </p><br/>
-                END;
+END;
                 if($item->url != null)
                 {
                     $html = $html . <<<END
                         <p>Lien externe : <a href="$item->url"> ici </a></p>
-                    END;
+END;
                 }
             }
 
             $html = $html . <<<END
                   </div>
                 </div>
-            END;
+END;
         }
 
         $html = $html . "</div>";
@@ -664,7 +664,7 @@ END;
                 </form>
                 <p> Clique <span id="btn_connexion">ici</span> si tu as un compte</p>
               </div>
-         END;
+END;
 
         return $html;
     }
@@ -734,20 +734,20 @@ END;
               <nav>
                 <p><a href="{$this->data["container"]->router->pathFor("index")}" title="Aller à la page d'accueil"> Page d'accueil </a></p>
                 <p><a href="{$this->data["container"]->router->pathFor("mesListes")}" title="Aller à la pages Mes listes"> Mes listes </a></p>
-        END;
+END;
 
         if(!isset($_SESSION['auth']))
         {
             $html = $html . <<<END
                 <p><a href="{$this->data["container"]->router->pathFor("connexionInscription")}" title="Se connecter à son espace compte"> Se connecter </a></p>
-            END;
+END;
         }
         else
         {
             $html = $html . <<<END
                 <p><a href="{$this->data["container"]->router->pathFor("compte")}" title="Aller à mon espace compte"> Mon compte </a></p>
                 <p><a href="{$this->data["container"]->router->pathFor("deconnexion")}" title="Se deconnecter de mon espace compte"> Se deconnecter </a></p>
-            END;
+END;
         }
 
         $html = $html . <<<END
@@ -762,7 +762,7 @@ END;
               $script
             </body>
             </html>
-        END;
+END;
 
         return $html;
     }
